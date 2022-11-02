@@ -1,37 +1,36 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 const initialAmount = 0;
 
-const useLogic = ({ deposit, isOpen, onRequestClose }) => {
+const useLogic = ({ withdraw, isOpen, onRequestClose }) => {
   const [userId, setUserId] = useState(null);
   const [bankId, setBankId] = useState(null);
-  const [amount, setAmount] = useState(initialAmount);
+  const [withdrawAmount, setWithdrawAmount] = useState(initialAmount);
 
   useEffect(() => {
-    if (!isOpen) {
-      return;
-    }
+    if (!isOpen) return;
     setUserId(null);
     setBankId(null);
-    setAmount(initialAmount);
+    setWithdrawAmount(null);
   }, [isOpen]);
 
   const submit = () => {
-    deposit({ userId, bankId, amount: Number(amount) });
+    withdraw({ userId, bankId, withdrawAmount: Number(withdrawAmount) });
     onRequestClose();
     console.log('submit완료')
+
   };
   const alertSomething =()=>{
     alert('각각의 항목을 다시 확인해주세요!');
-  };
+  }
 
   return {
     userId,
     bankId,
-    amount,
+    withdrawAmount,
     setUserId,
     setBankId,
-    setAmount,
+    setWithdrawAmount,
     submit,
     alertSomething
   };

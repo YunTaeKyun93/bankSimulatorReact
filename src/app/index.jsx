@@ -1,23 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
-import useLogic from './use-logic';
+import useLogic from './use-logic'; // 
 import Actions from './fragments/actions';
 import Users from './fragments/users';
 import Banks from './fragments/banks';
 import CreateUserFragment from './fragments/create-user';
 import DepositFragment from './fragments/deposit';
-
+import WithdrawFragment from './fragments/withdraw';
 const Cont = styled.div`
     position: fixed;
     width: 100%;
     height: 100%;
-
     display: flex;
     flex-direction: column;
     align-items: stretch;
-
     padding: 10px;
-
     box-sizing: border-box;
 `;
 
@@ -39,18 +36,24 @@ const TheBanks = styled(Banks)`
     flex: 1;
 `;
 
+
 const App = () => {
     const logic = useLogic();
 
     return (
         <Cont>
+            {/* UI */}
             <TheActions logic={logic}/>
             <Data>
                 <TheUsers logic={logic}/>
                 <TheBanks logic={logic}/>
-            </Data>
+            </Data> 
+
+            {/* 모달 */}
             <CreateUserFragment logic={logic}/>
             <DepositFragment logic={logic}/>
+            <WithdrawFragment logic={logic}/>
+            
         </Cont>
     );
 };

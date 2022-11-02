@@ -16,12 +16,10 @@ const CreateUserModal = ({isOpen, onRequestClose, createUser}) => {
                 age={logic.age}
                 country={logic.country}
                 initialBudget={logic.initialBudget}
-                
                 setName={logic.setName}
                 setAge={logic.setAge}
                 setCountry={logic.setCountry}
                 setInitialBudget={logic.setInitialBudget}
-
                 onSubmit={logic.submit}
             />
         </Modal>

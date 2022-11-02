@@ -10,40 +10,32 @@ const useTestInitScript = ({banking}) => {
         }
 
         {
-            const user = banking.createUser({name: '홍길동', age: 28, country: 'Chosun', initialBudget: 300});
-            const bank = banking.createBank({name: '조선은행', dailyInterestRate: 1.8, initialBudget: 10000});
-            banking.deposit({
-                userId: user.id,
-                bankId: bank.id,
-                amount: 30,
-            });
+            const user = banking.createUser({name: '김사과', age: 28, country: 'Chosun', initialBudget: 300});
+            const bank = banking.createBank({name: '하나은행', dailyInterestRate: 1.8, initialBudget: 10000});
+      
         }
         {
-            const user = banking.createUser({name: '홍길동', age: 28, country: 'Chosun', initialBudget: 300});
-            const bank = banking.createBank({name: '조선은행', dailyInterestRate: 1.8, initialBudget: 10000});
-            banking.deposit({
-                userId: user.id,
-                bankId: bank.id,
-                amount: 30,
-            });
+            const user = banking.createUser({name: '이망고', age: 28, country: 'Chosun', initialBudget: 300});
+            const bank = banking.createBank({name: '카카오은행', dailyInterestRate: 1.8, initialBudget: 10000});
+      
         }
         {
-            const user = banking.createUser({name: '홍길동', age: 28, country: 'Chosun', initialBudget: 300});
-            const bank = banking.createBank({name: '조선은행', dailyInterestRate: 1.8, initialBudget: 10000});
-            banking.deposit({
-                userId: user.id,
-                bankId: bank.id,
-                amount: 30,
-            });
+            const user = banking.createUser({name: '홍레몬', age: 28, country: 'Chosun', initialBudget: 300});
+            const bank = banking.createBank({name: '부산은행', dailyInterestRate: 1.8, initialBudget: 10000});
+            // banking.deposit({
+            //     userId: user.id,
+            //     bankId: bank.id,
+            //     amount: 30,
+            // });
         }
         {
-            const user = banking.createUser({name: '홍길동', age: 28, country: 'Chosun', initialBudget: 300});
-            const bank = banking.createBank({name: '조선은행', dailyInterestRate: 1.8, initialBudget: 10000});
-            banking.deposit({
-                userId: user.id,
-                bankId: bank.id,
-                amount: 30,
-            });
+            const user = banking.createUser({name: '윤포도', age: 28, country: 'Chosun', initialBudget: 300});
+            const bank = banking.createBank({name: '제일은행', dailyInterestRate: 1.8, initialBudget: 10000});
+            // banking.deposit({
+            //     userId: user.id,
+            //     bankId: bank.id,
+            //     amount: 30,
+            // });
         }
 
         isInitCalledRef.current = true;

@@ -15,6 +15,7 @@ const Deposit = ({
     setAmount,
     onSubmit,
     banking,
+    alertSomething
 }) => {
     return (
         <Cont className={className}>
@@ -25,13 +26,13 @@ const Deposit = ({
                 placeholder='입금액'
                 value={amount}
                 onChange={(event) => {
-                    setAmount(event.target.value);
+                setAmount(event.target.value);
                 }}
             />
             <button
                 onClick={(event) => {
                     event.stopPropagation();
-                    onSubmit != null && onSubmit();
+                    onSubmit == null ? alertSomething() : onSubmit();
                 }}
             >
                 입금

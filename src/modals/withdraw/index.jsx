@@ -1,21 +1,21 @@
 import React from "react";
 import Modal from "react-modal";
 import useLogic from "./use-logic";
-import Deposit from "../../components/deposit";
+import Withdraw from "../../components/withdraw";
 
-const DepositModal = ({ isOpen, onRequestClose, deposit, banking }) => {
-  const logic = useLogic({ deposit, isOpen, onRequestClose });
+const WithdrawModal = ({ isOpen, onRequestClose, withdraw, banking }) => {
+  const logic = useLogic({ withdraw, isOpen, onRequestClose });
 
   return (
     <Modal isOpen={isOpen} onRequestClose={onRequestClose}>
-      <Deposit
+       <Withdraw
         banking={banking}
         userId={logic.userId}
         bankId={logic.bankId}
-        amount={logic.amount}
+        amount={logic.withdrawAmount}
         setUserId={logic.setUserId}
         setBankId={logic.setBankId}
-        setAmount={logic.setAmount}
+        setWithdrawAmount={logic.setWithdrawAmount}
         onSubmit={logic.submit}
         alertSomething={logic.alertSomething}
       />
@@ -23,4 +23,4 @@ const DepositModal = ({ isOpen, onRequestClose, deposit, banking }) => {
   );
 };
 
-export default DepositModal;
+export default WithdrawModal;
