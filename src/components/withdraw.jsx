@@ -6,7 +6,6 @@ import BankInput from "./bank-input";
 const Cont = styled.div``;
 
 
-
 const Withdraw = ({
   className,
   userId,
@@ -17,7 +16,7 @@ const Withdraw = ({
   setWithdrawAmount,
   onSubmit,
   banking,
-  alertSomething
+  // alertSomething
 }) => {
   return (
     <Cont className={className}>
@@ -26,7 +25,7 @@ const Withdraw = ({
       <input
         type="number"
         placeholder="출금액"
-        value={amount || ''}
+        value={amount}
         onChange={(event) => {
           setWithdrawAmount(event.target.value);
         }}
@@ -34,7 +33,8 @@ const Withdraw = ({
       <button
         onClick={(event) => {
           event.stopPropagation();
-          onSubmit == null ? alertSomething() : onSubmit();
+          onSubmit();
+          // onSubmit == null ? alertSomething() : onSubmit();
         }}
       >
         출금

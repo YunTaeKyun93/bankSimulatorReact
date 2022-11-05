@@ -15,3 +15,6 @@ const Withdraw = ({ logic }) => {
 };
 
 export default Withdraw;
+// (a,b,c)=>{
+//   logic.withdraw({a,b,c})
+// }

@@ -1,4 +1,4 @@
-import checkBankAccountByBankId from './../utils/check-bank-account-by-userId';
+import checkBankAccountByBankId from '../utils/check-bank-account-by-user-id';
 
 
 

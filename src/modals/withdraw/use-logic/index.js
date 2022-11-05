@@ -1,38 +1,55 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
-const initialAmount = 0;
+const initialAmount = "";
 
 const useLogic = ({ withdraw, isOpen, onRequestClose }) => {
   const [userId, setUserId] = useState(null);
   const [bankId, setBankId] = useState(null);
-  const [withdrawAmount, setWithdrawAmount] = useState(initialAmount);
+  const [amount, setAmount] = useState(initialAmount);
 
   useEffect(() => {
     if (!isOpen) return;
     setUserId(null);
     setBankId(null);
-    setWithdrawAmount(null);
+    setAmount(initialAmount);
   }, [isOpen]);
 
   const submit = () => {
-    withdraw({ userId, bankId, withdrawAmount: Number(withdrawAmount) });
-    onRequestClose();
-    console.log('submit완료')
+    if (userId == null) {
+      alert("유저를 입력해주세요!");
+      return;
+    }
 
+    if (bankId == null) {
+      alert("은행을 입력해주세요!");
+      return;
+    }
+
+    const withdrawAmountIsNotANumber = Number.isNaN(Number(amount));
+    if (withdrawAmountIsNotANumber) {
+      alert("출금액을 정확하게 입력해주세요!");
+      return;
+    }
+
+    // if (Number(withdrawAmount) < 1) {
+    //   alert('출금액은 0보다 커야합니다');
+    //   return;
+    // }
+
+    withdraw({ userId, bankId, amount: Number(amount) });
+    onRequestClose();
+    console.log("submit완료");
   };
-  const alertSomething =()=>{
-    alert('각각의 항목을 다시 확인해주세요!');
-  }
 
   return {
     userId,
     bankId,
-    withdrawAmount,
+    amount,
     setUserId,
     setBankId,
-    setWithdrawAmount,
-    submit,
-    alertSomething
+    setAmount,
+    submit
+    // alertSomething
   };
 };
 

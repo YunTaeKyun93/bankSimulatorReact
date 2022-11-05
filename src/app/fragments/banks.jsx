@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import styled from "styled-components";
 import Bank from "../../components/bank";
-import BankAccounts from "../../components/bankAccount";
+ import BankAccounts from "../../components/bank-accounts";
 
 const Cont = styled.div`
   padding: 10px;
@@ -36,10 +36,30 @@ const P = styled.p`
   cursor: pointer;
   padding: 8px;
   font-weight: 600;
-  font-size: 1vw;
+  font-size: 14px;
   background-color: gray;
   margin: 0;
 `;
+
+const getBankAccountsForDumbComp = (logic, bank) => {
+  const findUserById = (userId) =>
+    logic.users.find((currentUser) => currentUser.id === userId);
+
+    return logic.bankAccounts
+    .filter((bankAccount) => bankAccount.bankId === bank.id)
+    .map((bankAccount) => {
+      const bankAccountOwner = findUserById(bankAccount.userId);
+      return {
+        id: bankAccount.id,
+        user: {
+          id: bankAccountOwner.id,
+          name: bankAccountOwner.name
+        },
+        balance: bankAccount.balance
+      };
+    })
+}
+
 const Banks = ({ className, logic }) => {
   return (
     <Cont className={className}>
@@ -51,15 +71,17 @@ const Banks = ({ className, logic }) => {
         {logic.banks.map((bank) => (
           <Fragment key={bank.id}>
             <TheBank
-              key={bank.id}
               id={bank.id}
               name={bank.name}
               dailyInterestRate={bank.dailyInterestRate}
               budget={bank.budget}
               logic={logic}
             />
-            <P>계좌보기</P>
-            <TheBankAccounts logic={logic} />
+            <TheBankAccounts
+              isOpen={logic.isBankAccountsVisible[bank.id]}
+              toggleIsOpen={() => logic.toggleIsBankAccountVisible(bank.id)}
+              bankAccounts={getBankAccountsForDumbComp(logic, bank)}
+            />
           </Fragment>
         ))}
       </BanksCont>

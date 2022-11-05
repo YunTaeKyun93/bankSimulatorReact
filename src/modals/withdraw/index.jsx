@@ -12,12 +12,11 @@ const WithdrawModal = ({ isOpen, onRequestClose, withdraw, banking }) => {
         banking={banking}
         userId={logic.userId}
         bankId={logic.bankId}
-        amount={logic.withdrawAmount}
+        amount={logic.amount}
         setUserId={logic.setUserId}
         setBankId={logic.setBankId}
-        setWithdrawAmount={logic.setWithdrawAmount}
+        setAmount={logic.setAmount}
         onSubmit={logic.submit}
-        alertSomething={logic.alertSomething}
       />
     </Modal>
   );

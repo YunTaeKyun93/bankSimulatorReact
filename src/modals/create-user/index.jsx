@@ -5,7 +5,7 @@ import CreateUser from '../../components/create-user';
 
 const CreateUserModal = ({isOpen, onRequestClose, createUser}) => {
     const logic = useLogic({createUser, isOpen, onRequestClose});
-
+  
     return (
         <Modal
             isOpen={isOpen}

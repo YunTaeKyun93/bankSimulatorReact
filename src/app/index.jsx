@@ -53,7 +53,6 @@ const App = () => {
             <CreateUserFragment logic={logic}/>
             <DepositFragment logic={logic}/>
             <WithdrawFragment logic={logic}/>
-            
         </Cont>
     );
 };

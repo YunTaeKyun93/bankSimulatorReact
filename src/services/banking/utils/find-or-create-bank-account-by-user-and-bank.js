@@ -8,7 +8,7 @@ const findOrCreateBankAccountByUserAndBank = ({draft, userId, bankId}) => {
     if (bankAccount == null) {
         bankAccount = createBankAccount({draft, userId, bankId});
     }
-    console.log('1',bankAccount);
+   
     return bankAccount;
 };
 
