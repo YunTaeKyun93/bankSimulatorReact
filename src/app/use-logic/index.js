@@ -8,6 +8,8 @@ const useLogic = () => {
   const [isDepositModalOpen, setIsDepositModalOpen] = useState(false);
   const [isWithdrawModalOpen, setIsWithDrawModalOpen] = useState(false);
   const [isBankAccountsVisible, setIsBankAccountsVisible] = useState({});
+  const [isUserEarnsModalOpen, setIsUserEarnsModalOpen] = useState(false);
+  const [isUserUsesModalOpen, setIsUserUsesModalOpen] = useState(false);
   // console.log(isBankAccountsVisible);
 
   const banking = useBanking();
@@ -62,7 +64,8 @@ const useLogic = () => {
     createBank: banking.createBank,
     deposit: banking.deposit,
     withdraw: banking.withdraw,
-    
+    userEarns: banking.userEarns,
+    userUses: banking.userUses,
     isCreateUserModalOpen,
     setIsCreateUserModalOpen,
     isDepositModalOpen,
@@ -70,7 +73,11 @@ const useLogic = () => {
     isWithdrawModalOpen,
     setIsWithDrawModalOpen,
     isBankAccountsVisible,
-    toggleIsBankAccountVisible
+    toggleIsBankAccountVisible,
+    isUserEarnsModalOpen,
+    setIsUserEarnsModalOpen,
+    isUserUsesModalOpen,
+    setIsUserUsesModalOpen
   };
 };
 

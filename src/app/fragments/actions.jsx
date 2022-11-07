@@ -53,10 +53,18 @@ const Actions = ({ className, logic }) => {
         <Action
           onClick={(event) => {
             event.stopPropagation();
-            alert("또 다른 액션 2");
+           logic.setIsUserEarnsModalOpen(true)
           }}
         >
-          또 다른 액션 2
+          UserEarns
+        </Action>  
+        <Action
+          onClick={(event) => {
+            event.stopPropagation();
+            logic.setIsUserUsesModalOpen(true)
+          }}
+        >
+          UserUses
         </Action>  
       </ActionsCont>
     </Cont>

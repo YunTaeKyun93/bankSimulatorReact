@@ -16,7 +16,6 @@ const addMoneyToBankAccount = ({ draft, userId, bankId, amount }) => {
   bankAccount.balance += amount;
   bank.budget += amount;
   user.budget -= amount;
-  console.log('2',bankAccount);
 };
 
 export default addMoneyToBankAccount;

@@ -1,7 +1,7 @@
 import findBank from "./find-bank";
 import findUser from "./find-user";
-// import accountlessWarning from './accountless-warning';
 import checkDoesBankAccountExistByUserAndBank from "./check-does-bank-account-exist-by-user-and-bank";
+
 import addMoneyToBankAccount from "./add-money-to-bank-account";
 /**
  * @memo findOrCreateBankAccountByUserAndBank로 찾거나 생성해서 돈을 입금
@@ -14,12 +14,20 @@ import addMoneyToBankAccount from "./add-money-to-bank-account";
 const subtractMoneyFromBankAccount = ({ draft, userId, bankId, amount }) => {
   const bank = findBank(draft, bankId);
   const user = findUser(draft, userId);
-  checkDoesBankAccountExistByUserAndBank({state: draft, userId, bankId});
+  const bankAccount = checkDoesBankAccountExistByUserAndBank({
+    draft,
+    userId,
+    bankId
+  });
+
+  bankAccount.balance -= amount;
+  bank.budget -= amount;
+  user.budget -= amount;
   // accountlessWarning({draft, userId, bankId, amount})
 
   // console.log(accountlessWarning.bankAccount)
-  bank.budget -= amount;
-  user.budget += amount;
+  // bank.budget -= amount;
+  // user.budget += amount;
 };
 
 export default subtractMoneyFromBankAccount;

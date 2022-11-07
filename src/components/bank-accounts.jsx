@@ -49,8 +49,8 @@ const BankAccounts = ({
     <Cont className={className}>
       {isOpen && (
         <BankAccountCont>
-          {bankAccounts.map((bankAccount) => {
-            return <BankAccount bankAccount={bankAccount} />;
+          {bankAccounts.map((bankAccount,i) => {
+            return <BankAccount bankAccount={bankAccount}  key={i}/>;
           })}
         </BankAccountCont>
       )}

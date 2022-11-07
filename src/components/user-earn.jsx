@@ -1,46 +1,39 @@
 import React from "react";
 import styled from "styled-components";
-import UserInput from "./user-input";
-import BankInput from "./bank-input";
+import UserInput from "./user-input/index";
 
 const Cont = styled.div``;
 
-
-const Withdraw = ({
+const UserEarn = ({
   className,
+  banking,
   userId,
-  bankId,
   amount,
   setUserId,
-  setBankId,
   setAmount,
-  onSubmit,
-  banking,
-  // alertSomething
+  onSubmit
 }) => {
   return (
     <Cont className={className}>
       <UserInput value={userId} setValue={setUserId} banking={banking} />
-      <BankInput value={bankId} setValue={setBankId} banking={banking} />
       <input
         type="number"
-        placeholder="출금액"
+        placeholder="입금액"
         value={amount}
         onChange={(event) => {
           setAmount(event.target.value);
         }}
-      /> 
+      />
       <button
         onClick={(event) => {
           event.stopPropagation();
           onSubmit();
-          // onSubmit == null ? alertSomething() : onSubmit();
         }}
       >
-        출금
+        입금
       </button>
     </Cont>
   );
 };
 
-export default Withdraw;
+export default UserEarn;

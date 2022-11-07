@@ -7,6 +7,9 @@ import Banks from './fragments/banks';
 import CreateUserFragment from './fragments/create-user';
 import DepositFragment from './fragments/deposit';
 import WithdrawFragment from './fragments/withdraw';
+import UserEarnsFragment from './fragments/user-earns';
+import UserUsesFragment from './fragments/user-uses';
+
 const Cont = styled.div`
     position: fixed;
     width: 100%;
@@ -53,6 +56,8 @@ const App = () => {
             <CreateUserFragment logic={logic}/>
             <DepositFragment logic={logic}/>
             <WithdrawFragment logic={logic}/>
+            <UserEarnsFragment logic={logic}/>
+            <UserUsesFragment logic={logic}/>
         </Cont>
     );
 };

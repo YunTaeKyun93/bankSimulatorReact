@@ -25,7 +25,9 @@ const Bank = styled.div`
         margin-top: 0px;
     }
 `;
-
+const P = styled.p`
+    
+`
 const BankInput = ({
     className,
     value,
@@ -51,6 +53,7 @@ const BankInput = ({
             {banking.banks.length === 0 && <p>은행이 없습니다</p>}
             {banking.banks.length !== 0 && 
                 <Banks>
+                    <P>은행 목록</P>
                     {banking.banks.map((bank) => {
                         return (
                             <Bank 

@@ -10,4 +10,4 @@ return ({
 })
 };
 
-export default showBankAccounts;
+export default showBankAccounts;cv  c  
