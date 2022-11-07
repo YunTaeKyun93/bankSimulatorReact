@@ -5,6 +5,7 @@ import createDeposit from "./actions/deposit";
 import createWithdrow from "./actions/withdraw";
 import createUserEarns from "./actions/user-earns";
 import createUserUses from './actions/user-uses';
+import createShowAllInfo from './actions/show-all-info';
 const useBanking = () => {
   const [state, setState] = useState({
     users: [],
@@ -21,6 +22,7 @@ const useBanking = () => {
   const withdraw = createWithdrow({ state, setState });
   const userEarns = createUserEarns({ state, setState });
   const userUses = createUserUses({state, setState});
+  const showAllInfo = createShowAllInfo({state,setState})
   // todo add some more
 
   return {
@@ -33,6 +35,7 @@ const useBanking = () => {
     withdraw,
     userEarns,
     userUses,
+    showAllInfo,
   };
 };
 

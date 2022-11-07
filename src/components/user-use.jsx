@@ -15,13 +15,13 @@ const UserUse = ({
 }) => {
   return (
     <Cont className={className}>
-      <UserInput value={userId} setValue={setUserId} banking={banking} />
+        <UserInput value={userId} setValue={setUserId} banking={banking} />
       <input
         type="number"
         placeholder="사용금액"
         value={amount}
         onChange={(event) => {
-          setAmount(event.target.value);
+        setAmount(event.target.value);
         }}
       />
       <button

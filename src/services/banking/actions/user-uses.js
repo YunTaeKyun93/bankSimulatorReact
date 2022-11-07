@@ -5,8 +5,9 @@ const userUses =
   ({ state, setState }) =>
   ({ userId, amount }) => {
     setState((oldState) => {
+      console.log('2',userId)
       return produce(oldState, (draft) => {
-        subtractMoneyFromUser({ draft: state, userId, amount });
+        subtractMoneyFromUser({ draft, userId, amount });
       });
     });
   };

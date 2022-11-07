@@ -4,7 +4,6 @@ import styled from "styled-components";
 const Cont = styled.div`
   padding: 10px;
   border: 1px solid blue;
-  
 `;
 
 const ActionsCont = styled.div`
@@ -53,19 +52,27 @@ const Actions = ({ className, logic }) => {
         <Action
           onClick={(event) => {
             event.stopPropagation();
-           logic.setIsUserEarnsModalOpen(true)
+            logic.setIsUserEarnsModalOpen(true);
           }}
         >
           UserEarns
-        </Action>  
+        </Action>
         <Action
           onClick={(event) => {
             event.stopPropagation();
-            logic.setIsUserUsesModalOpen(true)
+            logic.setIsUserUsesModalOpen(true);
           }}
         >
           UserUses
-        </Action>  
+        </Action>
+        <Action
+          onClick={(event) => {
+            event.stopPropagation();
+            logic.setIsShowAllInfoModalOpen(true);
+          }}
+        >
+          Show Info
+        </Action>
       </ActionsCont>
     </Cont>
   );

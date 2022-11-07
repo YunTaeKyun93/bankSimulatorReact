@@ -17,6 +17,7 @@ const useLogic = ({ isOpen, onRequestClose, userUses }) => {
       alert("유저를 입력해주세요");
       return;
     }
+    console.log('1',userId)
     userUses({ userId, amount: Number(amount) });
     onRequestClose();
   };

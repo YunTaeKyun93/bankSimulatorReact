@@ -4,8 +4,7 @@ import findUser from "./find-user";
  */
 const addMoneyToUser = ({ draft, userId, amount }) => {
   const user = findUser(draft, userId);
-
-    user.budget += amount;
+  user.budget += amount;
 };
 
 export default addMoneyToUser;

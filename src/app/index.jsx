@@ -9,6 +9,7 @@ import DepositFragment from './fragments/deposit';
 import WithdrawFragment from './fragments/withdraw';
 import UserEarnsFragment from './fragments/user-earns';
 import UserUsesFragment from './fragments/user-uses';
+import ShowAllInfos from './fragments/show-all-infos';
 
 const Cont = styled.div`
     position: fixed;
@@ -58,6 +59,7 @@ const App = () => {
             <WithdrawFragment logic={logic}/>
             <UserEarnsFragment logic={logic}/>
             <UserUsesFragment logic={logic}/>
+            <ShowAllInfos logic={logic}/>
         </Cont>
     );
 };

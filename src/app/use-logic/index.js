@@ -10,6 +10,7 @@ const useLogic = () => {
   const [isBankAccountsVisible, setIsBankAccountsVisible] = useState({});
   const [isUserEarnsModalOpen, setIsUserEarnsModalOpen] = useState(false);
   const [isUserUsesModalOpen, setIsUserUsesModalOpen] = useState(false);
+  const [isShowAllInfoModalOpen, setIsShowAllInfoModalOpen] = useState(false);
   // console.log(isBankAccountsVisible);
 
   const banking = useBanking();
@@ -77,7 +78,9 @@ const useLogic = () => {
     isUserEarnsModalOpen,
     setIsUserEarnsModalOpen,
     isUserUsesModalOpen,
-    setIsUserUsesModalOpen
+    setIsUserUsesModalOpen,
+    isShowAllInfoModalOpen,
+    setIsShowAllInfoModalOpen
   };
 };
 
