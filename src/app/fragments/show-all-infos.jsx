@@ -5,7 +5,7 @@ const ShowAllInfos = ({ logic }) => {
   return (
     <ShowAllInfoModal
       isOpen={logic.isShowAllInfoModalOpen}
-      onRequset={() => logic.setIsShowAllInfoModalOpen(true)}
+      onRequestClose={() => logic.setIsShowAllInfoModalOpen(false)}
       showAllInfo={({ userId, bankId }) => {
         logic.showAllInfo({ userId, bankId });
       }}

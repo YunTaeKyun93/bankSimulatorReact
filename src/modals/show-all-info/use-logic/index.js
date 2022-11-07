@@ -1,7 +1,7 @@
-const useLogic = ({isOpen, onRequsetClose})=>{
+const useLogic = ({isOpen, onRequestClose})=>{
    const submit=()=>{
     if(!isOpen) return;
-    onRequsetClose();
+    onRequestClose();
    }
    return {
     submit
